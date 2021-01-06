@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="icon.png">
+    <link rel="shortcut icon" href="images/icon.png">
+    <script src="https://kit.fontawesome.com/dac92b92d5.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Crossmusic</title>
     <style>
         html {
@@ -14,13 +16,13 @@
             margin: 0;
         }
         #left {
-            width: 20%;
+            width: 18%;
             height: 100%;
             background-color: black;
             float: left;
         }
         #top {
-            width: 80%;
+            width: 82%;
             height: 100%;
             background-color: rgb(35, 35, 35);
             float: left;
@@ -32,11 +34,11 @@
             display: none;
         }
         #search {
-            margin-left: 2%;
             margin-top: 2%;
+            width: 98%;
         }
         #searchbtn2 {
-            width: 70%;
+            width: 75%;
             height: 30px;
             font-size: 25px;
             outline: none;
@@ -44,10 +46,31 @@
             border-radius: 5px;
             padding-left: 10px;
             padding-top: 3px;
+            margin-left: 2%;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
         }
         #songs {
             margin-left: 2%;
             margin-top: 4%;
+            width: 98%;
+        }
+        #searchdis {
+            margin-left: 2%;
+            margin-top: 4%;
+            width: 98%;
+        }
+        #playlistdis {
+            margin-left: 2%;
+            margin-top: 4%;
+            width: 98%;
+        }
+        #settingdis {
+            margin-left: 2%;
+            margin-top: 4%;
+            width: 98%;
         }
         #main {
             width: 100%;
@@ -56,6 +79,17 @@
         }
         #img {
             display: none;
+        }
+        #home, #searchpage, #playlist, #setting {
+            width: 100%;
+            height: 60px;
+            border-radius: 5px;
+            margin-top: 10px;
+            padding-top: 2.5%;
+        }
+        #home:hover, #searchpage:hover, #playlist:hover, #setting:hover {
+            background-color: rgb(25, 25, 25);
+            cursor: pointer;
         }
 
         @media screen and (max-width: 550px) {
@@ -93,7 +127,7 @@
                 margin-top: 4%;
             }
             #searchbtn1 {
-                display: block;
+                display: flex;
                 width: 80%;
                 height: 30px;
                 font-size: 25px;
@@ -120,19 +154,150 @@
 </head>
 <body>
     <div id="left">
-        <img src="icon.png" id="img">
+        <img src="images/icon.png" id="img">
         <input type="text" id="searchbtn1" placeholder="曲名を検索">
+        <div id="home" onclick="home()">
+            <h3 style="color: white;margin-left: 5%;"><i class="fas fa-home" style="margin-right: 10%;"></i>ホーム</h3>
+        </div>
+        <div id="searchpage" onclick="searchpage()">
+            <h3 style="color: white;margin-left: 5%;"><i class="fas fa-search" style="margin-right: 10%;"></i>検索</h3>
+        </div>
+        <div id="playlist" onclick="playlist()">
+            <h3 style="color: white;margin-left: 5%;"><i class="fas fa-headphones" style="margin-right: 10%;"></i>プレイリスト</h3>
+        </div>
+        <div id="setting" onclick="setting()">
+            <h3 style="color: white;margin-left: 5%;"><i class="fas fa-user-cog" style="margin-right: 10%;"></i>設定</h3>
+        </div>
     </div>
     <div id="top">
         <div id="main">
             <div id="search">
-                <input type="text" id="searchbtn2" placeholder="曲名を検索">
+                <input type="text" id="searchbtn2" autofocus autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="&#xF002; 曲名を検索">
+                <input type="button" onClick="searchiTunes()" value="検索">
             </div>
             <div id="songs">
                 <h1 style="color: white;">人気の曲</h1>
+                <br>
+                <div id="result"></div>
+            </div>
+            <div id="searchdis">
+                <h1 style="color: white;">検索結果</h1>
+            </div>
+            <div id="playlistdis">
+                <h1 style="color: white;">プレイリスト</h1>
+            </div>
+            <div id="settingdis">
+                <h1 style="color: white;">設定</h1>
             </div>
         </div>
     </div>
     <div id="right"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+     crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("songs").style.display = "block";
+        document.getElementById("searchdis").style.display = "none";
+        document.getElementById("playlistdis").style.display = "none";
+        document.getElementById("settingdis").style.display = "none";
+
+        function home() {
+            document.getElementById("songs").style.display = "block";
+            document.getElementById("searchdis").style.display = "none";
+            document.getElementById("playlistdis").style.display = "none";
+            document.getElementById("settingdis").style.display = "none";
+        }
+        function searchpage() {
+            document.getElementById("searchdis").style.display = "block";
+            document.getElementById("songs").style.display = "none";
+            document.getElementById("playlistdis").style.display = "none";
+            document.getElementById("settingdis").style.display = "none";
+        }
+        function playlist() {
+            document.getElementById("playlistdis").style.display = "block";
+            document.getElementById("searchdis").style.display = "none";
+            document.getElementById("songs").style.display = "none";
+            document.getElementById("settingdis").style.display = "none";
+        }
+        function setting() {
+            document.getElementById("settingdis").style.display = "block";
+            document.getElementById("searchdis").style.display = "none";
+            document.getElementById("playlistdis").style.display = "none";
+            document.getElementById("songs").style.display = "none";
+        }
+
+        //koko
+
+        function searchiTunes(){
+            target = document.getElementById("searchbtn2");
+            word = target.value;
+            search({term: word,limit: 20});		//検索語,取得曲数
+        }
+        
+        //取得する
+        var search = function getInfo (options) {
+          var params = {
+            lang: 'ja_jp',
+            entry: 'music',
+            media: 'music',
+            country: 'JP',
+          };
+        
+          // 検索ワード
+          if (options && options.term) {
+            params.term = options.term;
+          }
+        
+          // 取得件数
+          if (options && options.limit) {
+            params.limit = options.limit;
+          }
+          
+          $.ajax({
+            url: 'https://itunes.apple.com/search',
+            method: 'GET',
+            data: params,
+            dataType: 'jsonp',
+            
+            //成功
+            success: function(json) {
+              showData(json);
+            },
+        
+            //失敗
+            error: function() {
+              $(function(){
+                //$("#error").text("＊ エラーが発生しました ＊");
+              });
+            },
+          });
+        };
+        
+        // 表示する
+        function showData(json) {
+            
+              // データが取得できたら
+              if (json.results.length != 0) {
+        
+                  target = document.getElementById("result");
+                  html  = '<center>';
+                
+                for (var i = 0, len = json.results.length; i < len; i++) {
+                  var result = json.results[i];
+        
+                  html +=   '<br><a href="' + result.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">';
+                html +=     '<img src="' + result.artworkUrl100 + '" class="itunes-embed-image" />';
+                html +=   '</a><br>';
+                html +=   '<a href="' + result.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + result.trackName + '</a><br>';
+                html +=   '<class="itunes-embed-artist">' + result.artistName + '<br>';    
+                html +=   '<audio src="' + result.previewUrl + '" controls="" ></audio><br><br>'; 
+                }
+        
+                html += '</center>';
+              }
+        
+          target.innerHTML = html;
+        }
+    </script>
 </body>
 </html>
