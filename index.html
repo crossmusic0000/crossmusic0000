@@ -72,6 +72,11 @@
             margin-top: 4%;
             width: 98%;
         }
+        #videodis {
+            margin-left: 2%;
+            margin-top: 4%;
+            width: 98%;
+        }
         #main {
             width: 100%;
             height: 100%;
@@ -90,6 +95,71 @@
         #home:hover, #searchpage:hover, #playlist:hover, #setting:hover {
             background-color: rgb(25, 25, 25);
             cursor: pointer;
+        }
+        .input1 {
+            font-size: 15px;
+            color: white;
+            width: 10%;
+            height: 40px;
+            border: white 1px solid;
+            outline: none;
+            background:rgb(35, 35, 35);
+            margin-left: 3%;
+            margin-top: 1.8%
+        }
+        .input1:hover {
+            background: rgb(61, 61, 61);
+            cursor: pointer;
+        }
+        .input2 {
+            font-size: 15px;
+            color: white;
+            width: 10%;
+            height: 40px;
+            border: white 1px solid;
+            outline: none;
+            background:rgb(35, 35, 35);
+            margin-left: 3%;
+            margin-top: 1.8%
+        }
+        .input2:hover {
+            background: rgb(61, 61, 61);
+            cursor: pointer;
+        }
+        #result {
+            width: 90%;
+            margin-top: 3%;
+            margin-left: 0%;
+        }
+        #error {
+            color: white;
+            font-size: 30px;
+        }
+        #token {
+            width: 80%;
+            height: 180px;
+            border-radius: 5px;
+            padding-top: 3.5%;
+            padding-left: 3%;
+        }
+        #token:hover {
+            background: rgb(61, 61, 61);
+            cursor: pointer;
+        }
+        .itunes-embed-artist {
+            color: white;
+        }
+        #shiti {
+            width: 20%;height: 35px;background: rgb(32, 147, 201);
+            border: none;color:white;outline: none;border-radius: 5px;font-size: 20px;
+        }
+        #shiti:hover {
+            background: rgb(57, 170, 223);
+            cursor: pointer;
+        }
+        #matome {
+            margin-top: -19%;
+            margin-left: 30%;
         }
 
         @media screen and (max-width: 550px) {
@@ -173,15 +243,19 @@
         <div id="main">
             <div id="search">
                 <input type="text" id="searchbtn2" autofocus autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="&#xF002; 曲名を検索">
-                <input type="button" onClick="searchiTunes()" value="検索">
             </div>
             <div id="songs">
                 <h1 style="color: white;">人気の曲</h1>
+            </div>
+            <div id="searchdis">
+                <h1 style="color: white;float: left;">検索　曲</h1>
+                <input class="input1" type="button" value="動画" onclick="videopage()">
                 <br>
                 <div id="result"></div>
             </div>
-            <div id="searchdis">
-                <h1 style="color: white;">検索結果</h1>
+            <div id="videodis">
+                <h1 style="color: white;float: left;">検索　動画</h1>
+                <input class="input2" type="button" value="曲" onclick="searchpage()">
             </div>
             <div id="playlistdis">
                 <h1 style="color: white;">プレイリスト</h1>
@@ -200,41 +274,59 @@
         document.getElementById("searchdis").style.display = "none";
         document.getElementById("playlistdis").style.display = "none";
         document.getElementById("settingdis").style.display = "none";
+        document.getElementById("videodis").style.display = "none";
 
         function home() {
             document.getElementById("songs").style.display = "block";
             document.getElementById("searchdis").style.display = "none";
             document.getElementById("playlistdis").style.display = "none";
             document.getElementById("settingdis").style.display = "none";
+            document.getElementById("videodis").style.display = "none";
         }
         function searchpage() {
             document.getElementById("searchdis").style.display = "block";
             document.getElementById("songs").style.display = "none";
             document.getElementById("playlistdis").style.display = "none";
             document.getElementById("settingdis").style.display = "none";
+            document.getElementById("videodis").style.display = "none";
         }
         function playlist() {
             document.getElementById("playlistdis").style.display = "block";
             document.getElementById("searchdis").style.display = "none";
             document.getElementById("songs").style.display = "none";
             document.getElementById("settingdis").style.display = "none";
+            document.getElementById("videodis").style.display = "none";
         }
         function setting() {
             document.getElementById("settingdis").style.display = "block";
             document.getElementById("searchdis").style.display = "none";
             document.getElementById("playlistdis").style.display = "none";
             document.getElementById("songs").style.display = "none";
+            document.getElementById("videodis").style.display = "none";
+        }
+        function videopage() {
+            document.getElementById("settingdis").style.display = "none";
+            document.getElementById("searchdis").style.display = "none";
+            document.getElementById("playlistdis").style.display = "none";
+            document.getElementById("songs").style.display = "none";
+            document.getElementById("videodis").style.display = "block";
         }
 
         //koko
-
-        function searchiTunes(){
+        document.onkeypress = enter;
+        function enter(){
+          if( window.event.keyCode == 13 ){
             target = document.getElementById("searchbtn2");
             word = target.value;
-            search({term: word,limit: 20});		//検索語,取得曲数
+            search({term: word,limit: 20});
+            document.getElementById("searchdis").style.display = "block";
+            document.getElementById("songs").style.display = "none";
+            document.getElementById("playlistdis").style.display = "none";
+            document.getElementById("settingdis").style.display = "none";
+            document.getElementById("videodis").style.display = "none";
+          }
         }
-        
-        //取得する
+
         var search = function getInfo (options) {
           var params = {
             lang: 'ja_jp',
@@ -243,12 +335,10 @@
             country: 'JP',
           };
         
-          // 検索ワード
           if (options && options.term) {
             params.term = options.term;
           }
         
-          // 取得件数
           if (options && options.limit) {
             params.limit = options.limit;
           }
@@ -259,7 +349,6 @@
             data: params,
             dataType: 'jsonp',
             
-            //成功
             success: function(json) {
               showData(json);
             },
@@ -267,33 +356,32 @@
             //失敗
             error: function() {
               $(function(){
-                //$("#error").text("＊ エラーが発生しました ＊");
+                $("#error").text("エラーが発生しました。");
               });
             },
           });
         };
         
-        // 表示する
         function showData(json) {
             
-              // データが取得できたら
               if (json.results.length != 0) {
         
                   target = document.getElementById("result");
-                  html  = '<center>';
+                  html  = '<div>';
                 
                 for (var i = 0, len = json.results.length; i < len; i++) {
                   var result = json.results[i];
         
-                  html +=   '<br><a href="' + result.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">';
-                html +=     '<img src="' + result.artworkUrl100 + '" class="itunes-embed-image" />';
-                html +=   '</a><br>';
-                html +=   '<a href="' + result.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + result.trackName + '</a><br>';
-                html +=   '<class="itunes-embed-artist">' + result.artistName + '<br>';    
-                html +=   '<audio src="' + result.previewUrl + '" controls="" ></audio><br><br>'; 
+            html +=   '<div id="token"><a href="' + result.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">';
+            html +=     '<img style="width: 15%;height: 80%;" src="' + result.artworkUrl100 + '" class="itunes-embed-image" />';
+            html +=   '</a><br>';
+            html +=   '<div id="matome"><h2 class="itunes-embed-artist">' + result.artistName + "「" + result.trackName + "」" + '</h2>'
+            html +=   '<a class="daun" style="color: white;font-size: 20px;" href="' + result.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + result.trackName + "ダウンロード" + '</a><br><br>';
+            html += '<button id="shiti">' + "視聴する。" + '</button></div></div><br>';
+            //html +=   '<audio src="' + result.previewUrl + '" controls="" ></audio><br><br>'; 
                 }
         
-                html += '</center>';
+                html += '</div>';
               }
         
           target.innerHTML = html;
