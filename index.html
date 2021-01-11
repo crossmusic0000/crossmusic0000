@@ -127,6 +127,11 @@
             margin-top: 4%;
             width: 98%;
         }
+        #out0 {
+            margin-left: 2%;
+            margin-top: 4%;
+            width: 98%;
+        }
         #pract {
             margin-left: 2%;
             margin-top: 4%;
@@ -272,6 +277,38 @@
         cursor: not-allowed;
         transform: translateY(-4px);
     }
+    .playlistx {
+        float: left;
+        transition: .3s;
+        color: white;
+        width: 26%;
+        height: 310px;
+        margin-left: 5%;
+        margin-top: 0%;
+        border-radius: 10px;
+    }
+    .playlistx:hover {
+        cursor: pointer;
+        transform: translateY(-4px);
+    }
+    #tile1 {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 600px;
+      }
+    #tile1:before {
+        content: "";
+        position: absolute;
+        border-style: none;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        width: 100%;
+        height: 600px;
+        background: linear-gradient(rgba(255,255,255,0) 0, rgb(35, 35, 35) 400px);   
+      }
 
         @media screen and (max-width: 1000px) {
             #left {
@@ -366,6 +403,20 @@
                 <h1 style="color: white;">おすすめの曲</h1>
                 <br>
                 <div id="favo">
+                    <div class="playlistx" id="play0" style="background: linear-gradient(to right, rgb(255, 71, 71), rgb(253, 203, 127));">
+                        <img src="images/2020playlist.png" style="width: 100%;height: 230px;border-radius: 10px 10px 0px 0px;">
+                        <h3 style="margin-top: 15px;margin-left: 10px;">2020年　ヒット曲</h3>
+                    </div>
+                    <div onclick="out1()" class="playlistx" id="play1" style="background: linear-gradient(to right, rgb(170, 95, 245), rgb(87, 125, 252));">
+                        <img src="images/yougakuplaylist.png" style="width: 100%;height: 230px;border-radius: 10px 10px 0px 0px;">
+                        <h3 style="margin-top: 15px;margin-left: 10px;">洋楽　ヒット曲</h3>
+                    </div>
+                    <div class="playlistx" id="play1" style="background: rgb(245, 228, 95);">
+                        <img src="images/relaxplaylist.jpg" style="width: 100%;height: 230px;border-radius: 10px 10px 0px 0px;">
+                        <h3 style="margin-top: 15px;margin-left: 10px;">リラックス</h3>
+                    </div>
+                    <br>
+                    <hr style="margin-top: 35%;width: 109%;margin-left: 1%;">
                 </div>
             </div>
             <div id="searchdis">
@@ -385,7 +436,7 @@
             <div id="playlistdis">
                 <h1 style="color: white;">プレイリスト</h1>
                 <br>
-                <h2 style="color: white;">まだ、プレイリストを作成していません。</h2>
+                <h3 style="color: white;">フリープランのため、プレイリストは作成できません。</h3>
             </div>
             <div id="settingdis">
                 <h1 style="color: white;">設定</h1>
@@ -423,6 +474,21 @@
                 <br>
                 <div id="pract0"></div>
             </div>
+            <div id="out1">
+                <div id="tile1">
+                    <img src="images/out1back.jpg" style="width: 100%;height: 500px;z-index: 1;">
+                </div>
+                <div style="margin-top: -34%;z-index: 3;position: absolute;margin-left: 50px;width: 78%;">
+                    <img src="images/yougakuplaylist.png" style="width: 250px;height: 250px;float: left;">
+                    <div style="color:  white;float: left;margin-left: 5%;">
+                        <h1>洋楽　ヒット曲</h1>
+                        <br>
+                        <h3>作成者：　Crossnet</h3>
+                        <br>
+                        <h3>時間：　10分</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="right"></div>
@@ -442,6 +508,17 @@
         document.getElementById("settingdis").style.display = "none";
         document.getElementById("videodis").style.display = "none";
         document.getElementById("pract").style.display = "none";
+        document.getElementById("out1").style.display = "none";
+
+        function out1() {
+            document.getElementById("songs").style.display = "none";
+            document.getElementById("searchdis").style.display = "none";
+            document.getElementById("playlistdis").style.display = "none";
+            document.getElementById("settingdis").style.display = "none";
+            document.getElementById("videodis").style.display = "none";
+            document.getElementById("pract").style.display = "none";
+            document.getElementById("out1").style.display = "block";
+        }
 
         function home() {
             document.getElementById("songs").style.display = "block";
@@ -450,6 +527,7 @@
             document.getElementById("settingdis").style.display = "none";
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
+            document.getElementById("out1").style.display = "none";
         }
         function searchpage() {
             document.getElementById("searchdis").style.display = "block";
@@ -458,6 +536,7 @@
             document.getElementById("settingdis").style.display = "none";
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
+            document.getElementById("out1").style.display = "none";
         }
         function playlist() {
             document.getElementById("playlistdis").style.display = "block";
@@ -466,6 +545,7 @@
             document.getElementById("settingdis").style.display = "none";
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
+            document.getElementById("out1").style.display = "none";
         }
         function setting() {
             document.getElementById("settingdis").style.display = "block";
@@ -474,6 +554,7 @@
             document.getElementById("songs").style.display = "none";
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
+            document.getElementById("out1").style.display = "none";
         }
         function videopage() {
             document.getElementById("settingdis").style.display = "none";
@@ -482,6 +563,7 @@
             document.getElementById("songs").style.display = "none";
             document.getElementById("videodis").style.display = "block";
             document.getElementById("pract").style.display = "none";
+            document.getElementById("out1").style.display = "none";
         }
 
         //itunes
@@ -497,6 +579,7 @@
             document.getElementById("settingdis").style.display = "none";
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
+            document.getElementById("out1").style.display = "none";
 
             //out
 	// Clear Results
@@ -598,6 +681,7 @@
             document.getElementById("settingdis").style.display = "none";
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "block";
+            document.getElementById("out1").style.display = "none";
             htm = 'https://itunes.apple.com/lookup?id=' + clicked_id + '&country=JP';
 
             var pa = {
@@ -769,7 +853,7 @@ function getInput(it) {
     var channelTitle = it.snippet.channelTitle;
     var videoDate = it.snippet.publishedAt;
     var videoId = it.id.videoId;
-    var output = '<div style="float: left;width: 28.5%;height: 300px;padding: 5%;margin-right: -8%;margin-top: -5%;">' + 
+    var output = '<div style="float: left;width: 28.5%;height: 300px;padding: 5%;margin-right: -8%;margin-top: -3%;">' + 
         '<div>' + 
         '<iframe src="https://www.youtube.com/embed/' + videoId + '" style="width: 90%;height: 200px;"></iframe>' +
         '<h3 style="color: white;">'+title+'</a></h3>' +
