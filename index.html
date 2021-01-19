@@ -137,6 +137,11 @@
             margin-top: 4%;
             width: 96%;
         }
+        #pract1 {
+            margin-left: 2%;
+            margin-top: 4%;
+            width: 96%;
+        }
         #main {
             width: 100%;
             height: 100%;
@@ -145,14 +150,14 @@
         #img {
             display: none;
         }
-        #home, #searchpage, #playlist, #setting {
+        #home, #searchpage, #playlist, #setting, #premium {
             width: 100%;
             height: 60px;
             border-radius: 5px;
             margin-top: 10px;
             padding-top: 2.5%;
         }
-        #home:hover, #searchpage:hover, #playlist:hover, #setting:hover {
+        #home:hover, #searchpage:hover, #playlist:hover, #setting:hover, #premium:hover {
             background-color: rgb(25, 25, 25);
             cursor: pointer;
         }
@@ -169,6 +174,21 @@
         }
         .input1:hover {
             background: rgb(61, 61, 61);
+            cursor: pointer;
+        }
+        .input10 {
+            font-size: 20px;
+            color: rgb(8, 146, 238);
+            width: 15%;
+            height: 50px;
+            border: rgb(8, 146, 238) 1px solid;
+            outline: none;
+            background:white;
+            margin-left: 0%;
+            margin-top: 1.8%
+        }
+        .input10:hover {
+            background:rgb(210, 210, 210);
             cursor: pointer;
         }
         .input2 {
@@ -274,7 +294,7 @@
         transform: translateY(-4px);
     }
     #g2:hover {
-        cursor: not-allowed;
+        cursor: pointer;
         transform: translateY(-4px);
     }
     .playlistx {
@@ -308,7 +328,7 @@
         width: 100%;
         height: 600px;
         background: linear-gradient(rgba(255,255,255,0) 0, rgb(35, 35, 35) 400px);   
-      }
+    }
 
         @media screen and (max-width: 1000px) {
             #left {
@@ -373,7 +393,7 @@
 <body onload="prec()">
     <div id="left">
         <img src="icon.png" id="img">
-        <input type="text" id="searchbtn1" placeholder="曲名を検索">
+        <input type="search" id="searchbtn1" autofocus autocorrect="off" autocapitalize="off" spellcheck="true" placeholder="&#xF002; 曲名、アーティスト名、アルバム名を検索">
         <div id="home" onclick="home()">
             <h3 style="color: white;margin-left: 5%;"><i class="fas fa-home" style="margin-right: 10%;"></i>ホーム</h3>
         </div>
@@ -386,11 +406,19 @@
         <div id="setting" onclick="setting()">
             <h3 style="color: white;margin-left: 5%;"><i class="fas fa-user-cog" style="margin-right: 10%;"></i>設定</h3>
         </div>
+        <br>
+        <div id="premium" onclick="btnn()">
+            <h3 style="color: rgb(8, 146, 238);margin-left: 5%;"><i class="fas fa-music" style="margin-right: 10%;"></i>プレミアム</h3>
+        </div>
     </div>
     <div id="top">
         <div id="main">
             <div id="search">
-                <input type="search" id="searchbtn2" style="margin-top: 2%;" autofocus autocorrect="off" autocapitalize="off" spellcheck="true" placeholder="&#xF002; 曲名、アーティスト名、アルバム名を検索">
+                <input title="プレミアムへ" type="search" id="searchbtn2" style="margin-top: 2%;" autofocus autocorrect="off" autocapitalize="off" spellcheck="true" placeholder="&#xF002; 曲名、アーティスト名、アルバム名を検索">
+            </div>
+            <div style="margin-top: 0%;width: 100%;height: 13%;background: rgb(8, 146, 238);border: white;margin-top: 1px;">
+            <h1 style="color: white;float: left;position:relative;margin-left: 30px;">6000万曲を、フルで聴きたいなら、今すぐプレミアムへ</h1>
+            <input class="input10" type="button" title="プレミアムへ" id=href1 value="プレミアムへ" onclick="btnn()" style="margin-left: 900px;float: left;margin-top: -70px;position:relative;">
             </div>
             <div id="songs">
             <h1 style="color: white;">人気の曲</h1>
@@ -398,21 +426,21 @@
                 <div id="pop">
                 </div>
                 <br>
-                <hr style="margin-top: 50%;width: 98%;"> <!-- 歌詞　アルバム -->
+                <hr style="margin-top: 50%;width: 98%;">
                 <br>
                 <h1 style="color: white;">おすすめの曲</h1>
                 <br>
                 <div id="favo">
-                    <div class="playlistx" id="play0" style="background: linear-gradient(to right, rgb(255, 71, 71), rgb(253, 203, 127));">
-                        <img src="2020playlist.png" style="width: 100%;height: 230px;border-radius: 10px 10px 0px 0px;">
+                    <div class="playlistx" id="play0" style="background: rgb(35, 35, 35);">
+                        <img src="2020playlist.png" style="width: 100%;height: 240px;border-radius: 10px;">
                         <h3 style="margin-top: 15px;margin-left: 10px;">2020年　ヒット曲</h3>
                     </div>
-                    <div onclick="out1()" class="playlistx" id="play1" style="background: linear-gradient(to right, rgb(170, 95, 245), rgb(87, 125, 252));">
-                        <img src="yougakuplaylist.png" style="width: 100%;height: 230px;border-radius: 10px 10px 0px 0px;">
+                    <div onclick="out1()" class="playlistx" id="play1" style="background: rgb(35, 35, 35);">
+                        <img src="yougakuplaylist.png" style="width: 100%;height: 240px;border-radius: 10px;">
                         <h3 style="margin-top: 15px;margin-left: 10px;">洋楽　ヒット曲</h3>
                     </div>
-                    <div class="playlistx" id="play1" style="background: rgb(245, 228, 95);">
-                        <img src="relaxplaylist.jpg" style="width: 100%;height: 230px;border-radius: 10px 10px 0px 0px;">
+                    <div class="playlistx" id="play1" style="background: rgb(35, 35, 35);">
+                        <img src="relaxplaylist.jpg" style="width: 100%;height: 240px;border-radius: 10px;">
                         <h3 style="margin-top: 15px;margin-left: 10px;">リラックス</h3>
                     </div>
                     <br>
@@ -436,7 +464,11 @@
             <div id="playlistdis">
                 <h1 style="color: white;">プレイリスト</h1>
                 <br>
+                <div style="text-align: center;">
                 <h3 style="color: white;">フリープランのため、プレイリストは作成できません。</h3>
+                <br>
+                <input class="input10" title="プレミアムへ" type="button" id=href1 value="プレミアムへ" onclick="btnn()">
+                </div>
             </div>
             <div id="settingdis">
                 <h1 style="color: white;">設定</h1>
@@ -448,19 +480,19 @@
                     <br>
                     <h3 style="color: rgb(8, 146, 238);">月額：　無料</h3>
                     <br>
-                    <h3 style="color: rgb(8, 146, 238);">広告：　なし</h3>
+                    <h3 style="color: rgb(8, 146, 238);">フル再生：　可</h3>
                     <br>
                     <h3 style="color: rgb(8, 146, 238);">途中停止：　不可</h3>
                     <br>
                     <h3 style="color: rgb(8, 146, 238);">プレイリスト作成：　不可</h3>
                     <br>
                 </div>
-                <div id="g2" title="今はご使用できません。" style="width: 30%;height: 450px;background: linear-gradient(to bottom, rgb(8, 146, 238), rgb(28, 75, 231));margin-left: 8%;border-radius: 10px;float: left;transition: .3s;padding-top: 20px;padding-left: 3%;">
+                <div id="g2" title="使ってみる" style="width: 30%;height: 450px;background: linear-gradient(to bottom, rgb(8, 146, 238), rgb(28, 75, 231));margin-left: 8%;border-radius: 10px;float: left;transition: .3s;padding-top: 20px;padding-left: 3%;">
                     <h2 style="color: white;">プレミアムプラン</h2>
                     <br>
                     <h3 style="color: white;">月額：　980円</h3>
                     <br>
-                    <h3 style="color: white;">広告：　なし</h3>
+                    <h3 style="color: white;">フル再生：　可</h3>
                     <br>
                     <h3 style="color: white;">途中停止：　可</h3>
                     <br>
@@ -474,32 +506,37 @@
                 <br>
                 <div id="pract0"></div>
             </div>
+            <div id="pract1">
+                <i class="fas fa-arrow-left" id="past" title="戻る" onclick="searchpage()"></i>
+                <br>
+                <br>
+                <div id="pract2"></div>
+            </div>
             <div id="out1">
                 <div id="tile1">
-                    <img src="out1back.jpg" style="width: 100%;height: 500px;z-index: 1;">
+                    <img src="images/out1back.jpg" style="width: 100%;height: 500px;z-index: 1;">
                 </div>
                 <div style="margin-top: -34%;z-index: 3;position: absolute;margin-left: 50px;width: 78%;">
-                    <img src="yougakuplaylist.png" style="width: 250px;height: 250px;float: left;">
+                    <img src="yougakuplaylist.png" style="width: 300px;height: 240px;float: left;border-radius: 10px;">
                     <div style="color:  white;float: left;margin-left: 5%;">
                         <h1>洋楽　ヒット曲</h1>
                         <br>
                         <h3>作成者：　Crossnet</h3>
-                        <br>
-                        <h3>時間：　10分</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="right"></div>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-     crossorigin="anonymous"></script>
-    <script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
 
-      $(document).ready(function() {
-        $(".fancybox").fancybox();
-      });
+function btnn() {
+    location.href = "http://localhost/nakazawa/App/crossmusic%20signin.php";
+}
       
 
         document.getElementById("songs").style.display = "block";
@@ -509,6 +546,7 @@
         document.getElementById("videodis").style.display = "none";
         document.getElementById("pract").style.display = "none";
         document.getElementById("out1").style.display = "none";
+        document.getElementById("pract1").style.display = "none";
 
         function out1() {
             document.getElementById("songs").style.display = "none";
@@ -518,6 +556,7 @@
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "block";
+            document.getElementById("pract1").style.display = "none";
         }
 
         function home() {
@@ -528,6 +567,7 @@
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
+            document.getElementById("pract1").style.display = "none";
         }
         function searchpage() {
             document.getElementById("searchdis").style.display = "block";
@@ -537,6 +577,7 @@
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
+            document.getElementById("pract1").style.display = "none";
         }
         function playlist() {
             document.getElementById("playlistdis").style.display = "block";
@@ -546,6 +587,7 @@
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
+            document.getElementById("pract1").style.display = "none";
         }
         function setting() {
             document.getElementById("settingdis").style.display = "block";
@@ -555,6 +597,7 @@
             document.getElementById("videodis").style.display = "none";
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
+            document.getElementById("pract1").style.display = "none";
         }
         function videopage() {
             document.getElementById("settingdis").style.display = "none";
@@ -564,181 +607,238 @@
             document.getElementById("videodis").style.display = "block";
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
+            document.getElementById("pract1").style.display = "none";
         }
 
-        //itunes
-        document.onkeypress = enter;
-        function enter(){
-          if( window.event.keyCode == 13 ){
-            target = document.getElementById("searchbtn2");
-            word = target.value;
+//itunesについて
+
+document.onkeypress = enter;
+function enter(){
+    if( window.event.keyCode == 13 ){
+        target = document.getElementById("searchbtn2");
+        target0 = document.getElementById("searchbtn1")
+        word = target.value;
+        word0 = target0.value;
+        if (word == '') {
+            search({term: word0,limit: 20});
+        }else {
             search({term: word,limit: 20});
-            document.getElementById("searchdis").style.display = "block";
-            document.getElementById("songs").style.display = "none";
-            document.getElementById("playlistdis").style.display = "none";
-            document.getElementById("settingdis").style.display = "none";
-            document.getElementById("videodis").style.display = "none";
-            document.getElementById("pract").style.display = "none";
-            document.getElementById("out1").style.display = "none";
-
-            //out
-	// Clear Results
-	$('#res').html('');
-    $('#buttons').html('');
-    
-    var searchField = $('#searchbtn2');
-	var icon = $('#search-btn');
-	
-	// Get Form Input
-	q = $('#searchbtn2').val();
-
-	// Run GET Request on API********************************
-	$.get(
-		"https://www.googleapis.com/youtube/v3/search",{
-			part: 'snippet, id',
-			q: q,
-			type:'video',
-			key: 'AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA'},
-			function(data){
-				var nextPageToken = data.nextPageToken;
-				var prevPageToken = data.prevPageToken;
-				
-				// Log Data
-				console.log(data);
-				
-				$.each(data.items, function(i, item){
-					// Get Output****
-					var output = getOutput(item);
-					
-					// Display Results*****
-					$('#res').append(output);
-				});
-				
-			}
-	);
-          }
         }
+        document.getElementById("searchdis").style.display = "block";
+        document.getElementById("songs").style.display = "none";
+        document.getElementById("playlistdis").style.display = "none";
+        document.getElementById("settingdis").style.display = "none";
+        document.getElementById("videodis").style.display = "none";
+        document.getElementById("pract").style.display = "none";
+        document.getElementById("out1").style.display = "none";
+        document.getElementById("pract1").style.display = "none";
 
-        var search = function getInfo (options) {
-          var params = {
-            lang: 'ja_jp',
-            entry: 'music',
-            media: 'music',
-            country: 'JP',
-          };
+	    $('#res').html('');
+        $('#buttons').html('');
+        var searchField = $('#searchbtn2');
+	    var icon = $('#search-btn');
+        q = $('#searchbtn2').val();
+        q0 = $('#searchbtn1').val();
+
+        if (q == '') {
+            $.get(
+		        "https://www.googleapis.com/youtube/v3/search",{
+			    part: 'snippet, id',
+			    q: q0,
+			    type:'video',
+			    key: 'AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA'},
+			    function(data){
+				    var nextPageToken = data.nextPageToken;
+				    var prevPageToken = data.prevPageToken;
+				    console.log(data);
+				
+				    $.each(data.items, function(i, item){
+					    var output = getOutput(item);
+					    $('#res').append(output);
+				    });
+				}
+	        );
+        }else {
+            $.get(
+		        "https://www.googleapis.com/youtube/v3/search",{
+                part: 'snippet, id',
+			    q: q,
+			    type:'video',
+			    key: 'AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA'},
+			    function(data){
+				    var nextPageToken = data.nextPageToken;
+				    var prevPageToken = data.prevPageToken;
+				    console.log(data);				
+				    $.each(data.items, function(i, item){
+					    var output = getOutput(item);
+					    $('#res').append(output);
+				    });
+				}
+	        );
+        }
+    }
+}
+
+var search = function getInfo (options) {
+    var params = {
+        lang: 'en_us',
+        entry: 'music',
+        media: 'music',
+        country: 'US',
+    };
         
-          if (options && options.term) {
-            params.term = options.term;
-          }
+    if (options && options.term) {
+        params.term = options.term;
+    }
         
-          if (options && options.limit) {
-            params.limit = options.limit;
-          }
+    if (options && options.limit) {
+        params.limit = options.limit;
+    }
           
-          $.ajax({
-            url: 'https://itunes.apple.com/search',
-            method: 'GET',
-            data: params,
-            dataType: 'jsonp',
+    $.ajax({
+        url: 'https://itunes.apple.com/search',
+        method: 'GET',
+        data: params,
+        dataType: 'jsonp',
             
-            success: function(json) {
-              showData(json);
-            },
+        success: function(json) {
+            showData(json);
+        },
         
-            error: function() {
-              $(function(){
+        error: function() {
+            $(function(){
                 $("#error").text("エラーが発生しました");
-              });
-            },
-          });
-        };
+            });
+        },
+    });
+};
         
-        function showData(json) {
-            
-              if (json.results.length != 0) {
-        
-                  target = document.getElementById("result");
-                  html  = '<div>';
+function showData(json) {
+    if (json.results.length != 0) {
+        target = document.getElementById("result");
+        html  = '<div>';
                 
-                for (var i = 0, len = json.results.length; i < len; i++) {
-                  var result = json.results[i];
+        for (var i = 0, len = json.results.length; i < len; i++) {
+            var result = json.results[i];
         
             html +=   '<div id="token"><a href="' + result.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">';
             html +=   '<img style="width: 15%;height: 80%;" src="' + result.artworkUrl100 + '" class="itunes-embed-image"/>';
             html +=   '</a><br>';
             html +=   '<div id="matome"><h2 class="itunes-embed-artist">' + result.artistName + "「" + result.trackName + "」" + '</h2>'
             html += '<button id="' + result.trackId + '" onclick="replay_click(this.id)" style="width: 20%;height: 40px;font-size: 20px;color: white;background: rgb(32, 147, 201);outline: none;border: none;border-radius: 5px;cursor: pointer;">視聴する</button></div></div><br>'
-                }
-            html += '</div>';
-                  }
-          target.innerHTML = html;
         }
+        html += '</div>';
+    }
+    target.innerHTML = html;
+}
 
-        function replay_click(clicked_id) {
-            document.getElementById("searchdis").style.display = "none";
-            document.getElementById("songs").style.display = "none";
-            document.getElementById("playlistdis").style.display = "none";
-            document.getElementById("settingdis").style.display = "none";
-            document.getElementById("videodis").style.display = "none";
-            document.getElementById("pract").style.display = "block";
-            document.getElementById("out1").style.display = "none";
-            htm = 'https://itunes.apple.com/lookup?id=' + clicked_id + '&country=JP';
+function replay_click(clicked_id) {
+    document.getElementById("searchdis").style.display = "none";
+    document.getElementById("songs").style.display = "none";
+    document.getElementById("playlistdis").style.display = "none";
+    document.getElementById("settingdis").style.display = "none";
+    document.getElementById("videodis").style.display = "none";
+    document.getElementById("pract").style.display = "block";
+    document.getElementById("out1").style.display = "none";
+    document.getElementById("pract1").style.display = "none";
+    htm = 'https://itunes.apple.com/lookup?id=' + clicked_id; // + '&country=JP'
 
-            var pa = {
-                lang: 'ja_jp',
-                entry: 'music',
-                media: 'music',
-                country: 'JP',
-              };
-
-            $.ajax({
-                url: htm,
-                method: 'GET',
-                data: pa,
-                dataType: 'jsonp',
-                
-                success: function(json) {
-                  shows(json);
-                },
-            
-                error: function() {
-                  $(function(){
-                    $("#error").text("エラーが発生しました");
-                  });
-                },
-              });
-        }
-
-        function shows(json) {
-            if (json.results.length != 0) {
-                http  = '<div>';
-              
-              for (var i = 0, len = json.results.length; i < len; i++) {
-                var re = json.results[i];
-                var pract0 = document.getElementById("pract0");
-                pract0.style.background = "linear-gradient(rgb(8, 146, 238),  rgb(35, 35, 35))";             
-                
-                http += '<img src="' + re.artworkUrl100 + '" style="width: 22%;height: 15%;">';
-                http += '<div class="xxx" style="margin-left: 27%;margin-top: -23%;"><h1 style="color: white;">' + re.trackName + '</h1><br>';
-                http += '<h1 style="color: white;">' + re.artistName + '</h1><br>';
-                http += '<a style="color: white;font-size: 25px;" href="' + re.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + re.trackName + "　ダウンロード" + '</a><br></div><br><br>'
-                http += '<div style="text-align: center;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>'
-                http += '<div class="repeat-btns"><span><button class="play-pause" onclick="ok(this.id)" id="' + re.trackId + '"><i title="再生" style="cursor: pointer;" class="fa fa-play"></i></button></span></div></div>';
-                //歌詞、プレイリスト
-              }
-          http += '</div>';
-                }
-        pract0.innerHTML = http;
-      }
-
-function ok(clicked_id) {
-    var num = 'https://itunes.apple.com/lookup?id=' + clicked_id + '&country=JP';
-    var papa = {
-        lang: 'ja_jp',
+    var pa = {
+        lang: 'en_us', //ja_jp
         entry: 'music',
         media: 'music',
-        country: 'JP',
-      };
+        country: 'US', //JP
+    };
+
+    $.ajax({
+        url: htm,
+        method: 'GET',
+        data: pa,
+        dataType: 'jsonp',
+                
+        success: function(json) {
+            shows(json);
+        },
+            
+        error: function() {
+            $(function(){
+                $("#error").text("エラーが発生しました");
+            });
+        },
+    });
+}
+
+function shows(json) {
+    if (json.results.length != 0) {
+        http  = '<div>';
+              
+        for (var i = 0, len = json.results.length; i < len; i++) {
+            var re = json.results[i];
+            var pract0 = document.getElementById("pract0");
+            pract0.style.background = "linear-gradient(rgb(8, 146, 238),  rgb(35, 35, 35))";             
+                
+            http += '<img src="' + re.artworkUrl100 + '" style="width: 22%;height: 15%;">';
+            http += '<div class="xxx" style="margin-left: 27%;margin-top: -23%;"><h1 style="color: white;">' + re.trackName + '</h1><br>';
+            http += '<h1 style="color: white;">' + re.artistName + '</h1><br>';
+            http += '<a style="color: white;font-size: 25px;" href="' + re.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + re.trackName + "　ダウンロード" + '</a><br></div><br><br>'
+            http += '<div style="text-align: center;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>'
+            http += '<div class="repeat-btns"><span><button class="play-pause" onclick="ok(this.id)" id="' + re.trackId + '"><i title="再生" style="cursor: pointer;" class="fa fa-play"></i></button></span></div><div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" onclick="li(this.id)" id="' + re.trackId + '" class="btn111">歌詞を取得</button></div><br><br><br></div>';
+        }
+        http += '</div>';
+    }
+    pract0.innerHTML = http;
+}
+
+function li(clicked_id) {
+    var nummm = 'https://itunes.apple.com/lookup?id=' + clicked_id;
+    var papapa = {
+        lang: 'en_us',
+        entry: 'music',
+        media: 'music',
+        country: 'US',
+    };
+
+    $.ajax({
+        url: nummm,
+        method: 'GET',
+        data: papapa,
+        dataType: 'jsonp',
+        
+        success: function(json) {
+          showeded(json);
+        },
+
+        error: function() {
+            $(function(){
+              $("#error").text("エラーが発生しました");
+            });
+        },
+    });
+}
+
+function showeded(json) {
+    if (json.results.length != 0) {
+        for (var i = 0, len = json.results.length; i < len; i++) {
+            var r00 = json.results[i];
+            var artist = r00.artistName;
+            var track = r00.trackName;
+            $.get("https://api.lyrics.ovh/v1/" + artist + "/" + track,
+                function (data) {
+                    document.getElementById("lyrics").innerHTML = data.lyrics.replace(new RegExp("\n", "g"), "<br>")
+                }
+            )
+        }
+    }
+}
+
+function ok(clicked_id) {
+    var num = 'https://itunes.apple.com/lookup?id=' + clicked_id;
+    var papa = {
+        lang: 'en_us',
+        entry: 'music',
+        media: 'music',
+        country: 'US',
+    };
 
     $.ajax({
         url: num,
@@ -747,13 +847,13 @@ function ok(clicked_id) {
         dataType: 'jsonp',
         
         success: function(json) {
-          showed(json);
+            showed(json);
         },
     
         error: function() {
-          $(function(){
-            $("#error").text("エラーが発生しました");
-          });
+            $(function(){
+                $("#error").text("エラーが発生しました");
+            });
         },
     });
 }
@@ -778,24 +878,24 @@ function showed(json) {
                 let position = audio.currentTime / audio.duration;
                 fillbar.style.width = position * 100 + "%";
                 convertTime(Math.round(audio.currentTime));
-              });
+            });
               
-              function convertTime(seconds) {
+            function convertTime(seconds) {
                 let min = Math.floor(seconds / 60);
                 let sec = seconds % 60;
                 min = min < 10 ? "0" + min : min;
                 sec = sec < 10 ? "0" + sec : sec;
                 currentTime.textContent = min + ":" + sec;
                 totalTime(Math.round(audio.duration));
-              }
+            }
               
-              function totalTime(seconds) {
+            function totalTime(seconds) {
                 let min = Math.floor(seconds / 60);
                 let sec = seconds % 60;
                 min = min < 10 ? "0" + min : min;
                 sec = sec < 10 ? "0" + sec : sec;
                 currentTime.textContent += " / " + min + ":" + sec;
-              }
+            }
         }
     }
 }
@@ -808,7 +908,7 @@ function getOutput(item) {
     var thumb = item.snippet.thumbnails.high.url;
     var channelTitle = item.snippet.channelTitle;
     var videoDate = item.snippet.publishedAt;
-    var videoId = item.id.videoId;
+    var videoId = item.id.videoId; //id.videoId
     var output = '<div id="div0">' + 
     '<div class="list-left" style="margin-right: 10%;">' + 
     '<iframe id="pre" src="https://www.youtube.com/embed/' + videoId + '" style="width: 350px;height: 180px;"></iframe>' +
@@ -816,15 +916,34 @@ function getOutput(item) {
     '<div class="list-right">' +
     '<h3 style="color: white;">'+title+'</a></h3>' +
     '<small style="color: white;">By <span class="cTitle">' + channelTitle + '</span> on ' + videoDate + '</small>' +
-    '<h4 style="color: white;word-wrap: break-word;text-overflow: ellipsis; ">'+description+'</h4>' +
+    '<button id="videoId" onclick="youtube_click(this.id)" style="width: 20%;height: 40px;font-size: 20px;color: white;background: rgb(32, 147, 201);outline: none;border: none;border-radius: 5px;cursor: pointer;margin-left: 20px;">視聴する</button>' + 
     '</div>' +
     '</div>' +
     '<div id="clear"></div><br><br>';
     return output;
 }
 
+function youtube_click(clicked_id) {
+    document.getElementById("searchdis").style.display = "none";
+    document.getElementById("songs").style.display = "none";
+    document.getElementById("playlistdis").style.display = "none";
+    document.getElementById("settingdis").style.display = "none";
+    document.getElementById("videodis").style.display = "none";
+    document.getElementById("pract").style.display = "none";
+    document.getElementById("out1").style.display = "none";
+    document.getElementById("pract1").style.display = "block";
+
+    var pract2 = document.getElementById("pract2");
+    pract2.style.background = "linear-gradient(rgb(8, 146, 238), rgb(35, 35, 35))";             
+    httppp = '<div><iframe src="https://www.youtube.com/embed/' + clicked_id + '" style="width: 22%;height: 15%;"></iframe></div>';
+    //httppp += '<a style="color: white;font-size: 25px;cursor: pointer;" href="https://www.youtube.com/embed/' + videoId + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + title1 + "　ダウンロード" + '</a><br></div><br><br>'
+    //httppp += '<div style="text-align: center;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>'
+    //httppp += '<div class="repeat-btns"><span><button class="play-pause" onclick="ok(this.id)" id="' + re.trackId + '"><i title="再生" style="cursor: pointer;" class="fa fa-play"></i></button></span></div><div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" onclick="li(this.id)" id="' + re.trackId + '" class="btn111">歌詞を取得</button></div><br><br><br></div>';
+    pract2.innerHTML = httppp;
+}
+
 function prec() {
-$('#pop').html('');
+    $('#pop').html('');
     $('#buttons').html('');
 	q = "最近人気のMV";
 	$.get(
@@ -860,7 +979,8 @@ function getInput(it) {
         '</div>' +
         '</div>';
     return output;
-  }
-    </script>
+ }
+
+</script>
 </body>
 </html>
