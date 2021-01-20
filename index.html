@@ -14,6 +14,7 @@
         body {
             height: 100%;
             margin: 0;
+            overflow-y: hidden;
         }
         .time {
             margin: 15px 0;
@@ -85,7 +86,7 @@
             margin-top: 0%;
             width: 100%;
             height: 13%;
-            background: linear-gradient(to right, rgb(8, 146, 238), rgb(28, 75, 231));
+            background: rgb(8, 146, 238);
         }
         #searchbtn2 {
             width: 75%;
@@ -416,7 +417,7 @@
             <div id="search">
                 <input title="プレミアムへ" type="search" id="searchbtn2" style="margin-top: 2%;" autofocus autocorrect="off" autocapitalize="off" spellcheck="true" placeholder="&#xF002; 曲名、アーティスト名、アルバム名を検索">
             </div>
-            <div style="margin-top: 0%;width: 100%;height: 13%;background: rgb(8, 146, 238);border: white;margin-top: 1px;">
+            <div style="margin-top: 0%;width: 100%;height: 13%;background: linear-gradient(to right, rgb(8, 126, 188), rgb(28, 75, 231));margin-top: 1px;">
             <h1 style="color: white;float: left;position:relative;margin-left: 30px;">6000万曲を、フルで聴きたいなら、今すぐプレミアムへ</h1>
             <input class="input10" type="button" title="プレミアムへ" id=href1 value="プレミアムへ" onclick="btnn()" style="margin-left: 900px;float: left;margin-top: -70px;position:relative;">
             </div>
@@ -487,7 +488,7 @@
                     <h3 style="color: rgb(8, 146, 238);">プレイリスト作成：　不可</h3>
                     <br>
                 </div>
-                <div id="g2" title="使ってみる" style="width: 30%;height: 450px;background: linear-gradient(to bottom, rgb(8, 146, 238), rgb(28, 75, 231));margin-left: 8%;border-radius: 10px;float: left;transition: .3s;padding-top: 20px;padding-left: 3%;">
+                <div id="g2" title="使ってみる" style="width: 30%;height: 450px;background: linear-gradient(to bottom, rgb(8, 146, 238), rgb(28, 75, 231));margin-left: 8%;border-radius: 10px;float: left;transition: .3s;padding-top: 20px;padding-left: 3%;" onclick="btnn()">
                     <h2 style="color: white;">プレミアムプラン</h2>
                     <br>
                     <h3 style="color: white;">月額：　980円</h3>
@@ -514,7 +515,7 @@
             </div>
             <div id="out1">
                 <div id="tile1">
-                    <img src="images/out1back.jpg" style="width: 100%;height: 500px;z-index: 1;">
+                    <img src="out1back.jpg" style="width: 100%;height: 500px;z-index: 1;">
                 </div>
                 <div style="margin-top: -34%;z-index: 3;position: absolute;margin-left: 50px;width: 78%;">
                     <img src="yougakuplaylist.png" style="width: 300px;height: 240px;float: left;border-radius: 10px;">
@@ -646,7 +647,7 @@ function enter(){
 			    part: 'snippet, id',
 			    q: q0,
 			    type:'video',
-			    key: 'AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA'},
+			    key: 'AIzaSyBYAWN3RgnJu-3zUcGhLYY5-ApehhWZBac'},
 			    function(data){
 				    var nextPageToken = data.nextPageToken;
 				    var prevPageToken = data.prevPageToken;
@@ -664,7 +665,7 @@ function enter(){
                 part: 'snippet, id',
 			    q: q,
 			    type:'video',
-			    key: 'AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA'},
+			    key: 'AIzaSyBYAWN3RgnJu-3zUcGhLYY5-ApehhWZBac'},
 			    function(data){
 				    var nextPageToken = data.nextPageToken;
 				    var prevPageToken = data.prevPageToken;
@@ -782,7 +783,7 @@ function shows(json) {
             http += '<h1 style="color: white;">' + re.artistName + '</h1><br>';
             http += '<a style="color: white;font-size: 25px;" href="' + re.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + re.trackName + "　ダウンロード" + '</a><br></div><br><br>'
             http += '<div style="text-align: center;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>'
-            http += '<div class="repeat-btns"><span><button class="play-pause" onclick="ok(this.id)" id="' + re.trackId + '"><i title="再生" style="cursor: pointer;" class="fa fa-play"></i></button></span></div><div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" onclick="li(this.id)" id="' + re.trackId + '" class="btn111">歌詞を取得</button></div><br><br><br></div>';
+            http += '<div class="repeat-btns"><span><button class="play-pause" id="' + re.trackId + '"><i title="再生" style="cursor: pointer;" class="fa fa-play"></i></button></span></div><div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" onclick="li(this.id)" id="' + re.trackId + '" class="btn111">歌詞を取得</button></div><br><br><br></div>';
         }
         http += '</div>';
     }
@@ -909,14 +910,15 @@ function getOutput(item) {
     var channelTitle = item.snippet.channelTitle;
     var videoDate = item.snippet.publishedAt;
     var videoId = item.id.videoId; //id.videoId
+    console.log(videoDate)
     var output = '<div id="div0">' + 
     '<div class="list-left" style="margin-right: 10%;">' + 
     '<iframe id="pre" src="https://www.youtube.com/embed/' + videoId + '" style="width: 350px;height: 180px;"></iframe>' +
     '</div>' +
     '<div class="list-right">' +
     '<h3 style="color: white;">'+title+'</a></h3>' +
-    '<small style="color: white;">By <span class="cTitle">' + channelTitle + '</span> on ' + videoDate + '</small>' +
-    '<button id="videoId" onclick="youtube_click(this.id)" style="width: 20%;height: 40px;font-size: 20px;color: white;background: rgb(32, 147, 201);outline: none;border: none;border-radius: 5px;cursor: pointer;margin-left: 20px;">視聴する</button>' + 
+    '<h3 style="color: white;">By <span class="cTitle">' + channelTitle + '</span> on ' + videoDate + '</h3>' +
+    '<button id="' + videoId + '" onclick="youtube_click(this.id)" style="width: 20%;height: 40px;font-size: 20px;color: white;background: rgb(32, 147, 201);outline: none;border: none;border-radius: 5px;cursor: pointer;margin-left: 20px;">視聴する</button>' + 
     '</div>' +
     '</div>' +
     '<div id="clear"></div><br><br>';
@@ -932,14 +934,34 @@ function youtube_click(clicked_id) {
     document.getElementById("pract").style.display = "none";
     document.getElementById("out1").style.display = "none";
     document.getElementById("pract1").style.display = "block";
-
     var pract2 = document.getElementById("pract2");
-    pract2.style.background = "linear-gradient(rgb(8, 146, 238), rgb(35, 35, 35))";             
-    httppp = '<div><iframe src="https://www.youtube.com/embed/' + clicked_id + '" style="width: 22%;height: 15%;"></iframe></div>';
-    //httppp += '<a style="color: white;font-size: 25px;cursor: pointer;" href="https://www.youtube.com/embed/' + videoId + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + title1 + "　ダウンロード" + '</a><br></div><br><br>'
-    //httppp += '<div style="text-align: center;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>'
-    //httppp += '<div class="repeat-btns"><span><button class="play-pause" onclick="ok(this.id)" id="' + re.trackId + '"><i title="再生" style="cursor: pointer;" class="fa fa-play"></i></button></span></div><div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" onclick="li(this.id)" id="' + re.trackId + '" class="btn111">歌詞を取得</button></div><br><br><br></div>';
-    pract2.innerHTML = httppp;
+    pract2.style.background = "linear-gradient(rgb(8, 146, 238), rgb(35, 35, 35))";  
+
+    $.get(
+		"https://www.googleapis.com/youtube/v3/videos?id=" +clicked_id + "&key=AIzaSyBYAWN3RgnJu-3zUcGhLYY5-ApehhWZBac&part=snippet,contentDetails,statistics,status",{
+			part: 'snippet, id'},
+			function(data){
+				var nextPageToken = data.nextPageToken;
+				var prevPageToken = data.prevPageToken;
+				console.log(data);
+				$.each(data.items, function(i, item){
+                    var title = item.snippet.title;
+                    var description = item.snippet.description;
+                    var thumb = item.snippet.thumbnails.high.url;
+                    var channelTitle = item.snippet.channelTitle;
+                    var videoDate = item.snippet.publishedAt;
+                    var videoId = item.snippet.videoId;
+                    var underput = '<iframe src="https://www.youtube.com/embed/' + clicked_id + '" style="width: 750px;height: 350px;margin-left: 250px;margin-top: 10px;"></iframe>' +
+                                   '<div class="xxx"><h2 style="color: white;margin-top: 45px;text-align: center;">' + title + '</h2>' + 
+                                   '<div style="text-align: center;margin-top: 45px;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>' + 
+                                   '<div class="repeat-btns"><span><i class="fa fa-" title="再生" style="cursor: pointer;"></i>' + 
+                                   '</span><span><button id="' + clicked_id + '"><i class="fa fa-play" title="再生" style="cursor: pointer;"></i>' + 
+                                   '</button></span></div>' + 
+                                   '<div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" id="' + clicked_id + '" class="btn111">歌詞を取得</button></div></div><br><br><br></div>';
+                    pract2.innerHTML = underput;
+				});
+			}
+	);
 }
 
 function prec() {
@@ -951,7 +973,7 @@ function prec() {
 			part: 'snippet, id',
 			q: q,
             type:'video',
-            key: 'AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA'},
+            key: 'AIzaSyBYAWN3RgnJu-3zUcGhLYY5-ApehhWZBac'},
 			function(data){
 				var nextPageToken = data.nextPageToken;
 				var prevPageToken = data.prevPageToken;
