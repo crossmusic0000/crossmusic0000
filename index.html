@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="icon.png">
+    <link rel="shortcut icon" href="images/icon.png">
     <script src="https://kit.fontawesome.com/dac92b92d5.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Crossmusic</title>
@@ -312,24 +312,6 @@
         cursor: pointer;
         transform: translateY(-4px);
     }
-    #tile1 {
-        display: inline-block;
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        height: 600px;
-      }
-    #tile1:before {
-        content: "";
-        position: absolute;
-        border-style: none;
-        left: 0;
-        bottom: 0;
-        z-index: 2;
-        width: 100%;
-        height: 600px;
-        background: linear-gradient(rgba(255,255,255,0) 0, rgb(35, 35, 35) 400px);   
-    }
 
         @media screen and (max-width: 1000px) {
             #left {
@@ -393,8 +375,8 @@
 </head>
 <body onload="prec()">
     <div id="left">
-        <img src="icon.png" id="img">
-        <input type="search" id="searchbtn1" autofocus autocorrect="off" autocapitalize="off" spellcheck="true" placeholder="&#xF002; 曲名、アーティスト名、アルバム名を検索">
+        <img src="images/icon.png" id="img">
+        <input style="position: absolute;" type="search" id="searchbtn1" autofocus autocorrect="off" autocapitalize="off" spellcheck="true" placeholder="&#xF002; 曲名、アーティスト名、アルバム名を検索">
         <div id="home" onclick="home()">
             <h3 style="color: white;margin-left: 5%;"><i class="fas fa-home" style="margin-right: 10%;"></i>ホーム</h3>
         </div>
@@ -407,7 +389,6 @@
         <div id="setting" onclick="setting()">
             <h3 style="color: white;margin-left: 5%;"><i class="fas fa-user-cog" style="margin-right: 10%;"></i>設定</h3>
         </div>
-        <br>
         <div id="premium" onclick="btnn()">
             <h3 style="color: rgb(8, 146, 238);margin-left: 5%;"><i class="fas fa-music" style="margin-right: 10%;"></i>プレミアム</h3>
         </div>
@@ -432,16 +413,16 @@
                 <h1 style="color: white;">おすすめの曲</h1>
                 <br>
                 <div id="favo">
-                    <div class="playlistx" id="play0" style="background: rgb(35, 35, 35);">
-                        <img src="2020playlist.png" style="width: 100%;height: 240px;border-radius: 10px;">
+                    <div onclick="out0()" class="playlistx" id="play0" style="background: rgb(35, 35, 35);">
+                        <img src="images/2020playlist.png" style="width: 100%;height: 240px;border-radius: 10px;">
                         <h3 style="margin-top: 15px;margin-left: 10px;">2020年　ヒット曲</h3>
                     </div>
                     <div onclick="out1()" class="playlistx" id="play1" style="background: rgb(35, 35, 35);">
-                        <img src="yougakuplaylist.png" style="width: 100%;height: 240px;border-radius: 10px;">
+                        <img src="images/yougakuplaylist.png" style="width: 100%;height: 240px;border-radius: 10px;">
                         <h3 style="margin-top: 15px;margin-left: 10px;">洋楽　ヒット曲</h3>
                     </div>
-                    <div class="playlistx" id="play1" style="background: rgb(35, 35, 35);">
-                        <img src="relaxplaylist.jpg" style="width: 100%;height: 240px;border-radius: 10px;">
+                    <div onclick="out2()" class="playlistx" id="play1" style="background: rgb(35, 35, 35);">
+                        <img src="images/relaxplaylist.jpg" style="width: 100%;height: 240px;border-radius: 10px;">
                         <h3 style="margin-top: 15px;margin-left: 10px;">リラックス</h3>
                     </div>
                     <br>
@@ -485,7 +466,7 @@
                     <br>
                     <h3 style="color: rgb(8, 146, 238);">途中停止：　不可</h3>
                     <br>
-                    <h3 style="color: rgb(8, 146, 238);">プレイリスト作成：　不可</h3>
+                    <h3 style="color: rgb(8, 146, 238);">など</h3>
                     <br>
                 </div>
                 <div id="g2" title="使ってみる" style="width: 30%;height: 450px;background: linear-gradient(to bottom, rgb(8, 146, 238), rgb(28, 75, 231));margin-left: 8%;border-radius: 10px;float: left;transition: .3s;padding-top: 20px;padding-left: 3%;" onclick="btnn()">
@@ -497,7 +478,7 @@
                     <br>
                     <h3 style="color: white;">途中停止：　可</h3>
                     <br>
-                    <h3 style="color: white;">プレイリスト作成：　可</h3>
+                    <h3 style="color: white;">など</h3>
                     <br>
                 </div>
             </div>
@@ -513,27 +494,239 @@
                 <br>
                 <div id="pract2"></div>
             </div>
+            <div id="out0">
+            <div style="float: left;">
+                <img src="images/2020playlist.png" style="width: 300px;height: 240px;float: left;border-radius: 10px;margin-left: 40px;margin-top: 30px;">
+                <div style="color:  white;float: left;margin-left: 70%;margin-top: -40%;width: 300px;">
+                    <h1>2020年　ヒット曲</h1>
+                    <br>
+                    <h3>作成者：　Crossnet</h3>
+                    <br>
+                    <h3>10曲</h3>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ef/ca/a4/efcaa44a-517a-98e3-2353-5bff15471ed5/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Shape of You  -Ed Sheeran</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/7b/da/96/7bda9634-c799-27c0-b549-56fb04d62768/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Sugar  -Maroon5</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music5/v4/f5/46/b6/f546b615-b3ff-1910-ef37-e09d1afdf4b7/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">See You Again  -Wiz Khalifa (feat. Charlie Puth)</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/9c/91/83/9c918303-e0a4-2d4b-97d6-f986b9fba604/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Shake It Off  -Taylor Swift</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music4/v4/5d/1f/56/5d1f56ae-fa9d-8ae4-724e-172504571be4/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Thinking Out Loud  -Ed Sheeran</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/33/5f/6c/335f6cb3-a9f4-fdc4-f8dd-eabd15bb29a3/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">What Makes You Beautiful  -One Direction</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/06/90/cb/0690cb04-0fc7-d372-74ff-7800a4c1f40f/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">There's Nothing Holdin' Me Back  -Shawn Mendes</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/9a/c3/67/9ac367c0-5c09-01c7-2f50-5705a5fb88c6/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Sorry  -Justin Bieber</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/ff/4a/eb/ff4aeb7c-7f2d-1d18-d7cc-51c107c70bad/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Bud Guy  -Billie Eilish</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/cd/1f/84/cd1f8413-008a-6759-dccd-676ad72a017a/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Just the Way You Are  -Bruno Mars</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            </div>
             <div id="out1">
-                <div id="tile1">
-                    <img src="out1back.jpg" style="width: 100%;height: 500px;z-index: 1;">
+            <div style="float: left;">
+                <img src="images/yougakuplaylist.png" style="width: 300px;height: 240px;float: left;border-radius: 10px;margin-left: 40px;margin-top: 30px;">
+                <div style="color:  white;float: left;margin-left: 70%;margin-top: -40%;width: 300px;">
+                    <h1>洋楽　ヒット曲</h1>
+                    <br>
+                    <h3>作成者：　Crossnet</h3>
+                    <br>
+                    <h3>10曲</h3>
                 </div>
-                <div style="margin-top: -34%;z-index: 3;position: absolute;margin-left: 50px;width: 78%;">
-                    <img src="yougakuplaylist.png" style="width: 300px;height: 240px;float: left;border-radius: 10px;">
-                    <div style="color:  white;float: left;margin-left: 5%;">
-                        <h1>洋楽　ヒット曲</h1>
-                        <br>
-                        <h3>作成者：　Crossnet</h3>
-                    </div>
+            </div>
+            <br>
+            <br>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ef/ca/a4/efcaa44a-517a-98e3-2353-5bff15471ed5/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Shape of You  -Ed Sheeran</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/7b/da/96/7bda9634-c799-27c0-b549-56fb04d62768/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Sugar  -Maroon5</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music5/v4/f5/46/b6/f546b615-b3ff-1910-ef37-e09d1afdf4b7/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">See You Again  -Wiz Khalifa (feat. Charlie Puth)</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/9c/91/83/9c918303-e0a4-2d4b-97d6-f986b9fba604/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Shake It Off  -Taylor Swift</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music4/v4/5d/1f/56/5d1f56ae-fa9d-8ae4-724e-172504571be4/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Thinking Out Loud  -Ed Sheeran</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/33/5f/6c/335f6cb3-a9f4-fdc4-f8dd-eabd15bb29a3/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">What Makes You Beautiful  -One Direction</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/06/90/cb/0690cb04-0fc7-d372-74ff-7800a4c1f40f/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">There's Nothing Holdin' Me Back  -Shawn Mendes</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/9a/c3/67/9ac367c0-5c09-01c7-2f50-5705a5fb88c6/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Sorry  -Justin Bieber</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/ff/4a/eb/ff4aeb7c-7f2d-1d18-d7cc-51c107c70bad/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Bud Guy  -Billie Eilish</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/cd/1f/84/cd1f8413-008a-6759-dccd-676ad72a017a/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Just the Way You Are  -Bruno Mars</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            </div>
+            <div id="out2">
+            <div style="float: left;">
+                <img src="images/relaxplaylist.jpg" style="width: 300px;height: 240px;float: left;border-radius: 10px;margin-left: 40px;margin-top: 30px;">
+                <div style="color:  white;float: left;margin-left: 70%;margin-top: -40%;width: 300px;">
+                    <h1>リラックス</h1>
+                    <br>
+                    <h3>作成者：　Crossnet</h3>
+                    <br>
+                    <h3>10曲</h3>
                 </div>
+            </div>
+            <br>
+            <br>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ef/ca/a4/efcaa44a-517a-98e3-2353-5bff15471ed5/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Shape of You  -Ed Sheeran</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/7b/da/96/7bda9634-c799-27c0-b549-56fb04d62768/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Sugar  -Maroon5</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music5/v4/f5/46/b6/f546b615-b3ff-1910-ef37-e09d1afdf4b7/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">See You Again  -Wiz Khalifa (feat. Charlie Puth)</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/9c/91/83/9c918303-e0a4-2d4b-97d6-f986b9fba604/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Shake It Off  -Taylor Swift</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music4/v4/5d/1f/56/5d1f56ae-fa9d-8ae4-724e-172504571be4/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Thinking Out Loud  -Ed Sheeran</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/33/5f/6c/335f6cb3-a9f4-fdc4-f8dd-eabd15bb29a3/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">What Makes You Beautiful  -One Direction</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/06/90/cb/0690cb04-0fc7-d372-74ff-7800a4c1f40f/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">There's Nothing Holdin' Me Back  -Shawn Mendes</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/9a/c3/67/9ac367c0-5c09-01c7-2f50-5705a5fb88c6/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Sorry  -Justin Bieber</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/ff/4a/eb/ff4aeb7c-7f2d-1d18-d7cc-51c107c70bad/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Bud Guy  -Billie Eilish</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
+            <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/cd/1f/84/cd1f8413-008a-6759-dccd-676ad72a017a/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Just the Way You Are  -Bruno Mars</h3>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
+            </div>
             </div>
         </div>
     </div>
     <div id="right"></div>
+    <div id="api" style="width: 18%;height: 20%;background: rgb(26, 26, 26);position: absolute;top: 580px;z-index: 10;"><i style="color:  rgb(91, 91, 91);font-size: 120px;margin-left: 80px;margin-top: 20px;" class="fas fa-compact-disc"></i></div>
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
+
+console.log("%c個人情報は、決して盗まないでください。", 'color: red; background: white; font-size: 30px;');
 
 function btnn() {
     location.href = "http://localhost/nakazawa/App/crossmusic%20signin.php";
@@ -548,6 +741,9 @@ function btnn() {
         document.getElementById("pract").style.display = "none";
         document.getElementById("out1").style.display = "none";
         document.getElementById("pract1").style.display = "none";
+        document.getElementById("api").style.display = "block";
+        document.getElementById("out0").style.display = "none";
+        document.getElementById("out2").style.display = "none";
 
         function out1() {
             document.getElementById("songs").style.display = "none";
@@ -558,6 +754,37 @@ function btnn() {
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "block";
             document.getElementById("pract1").style.display = "none";
+            document.getElementById("api").style.display = "block";
+            document.getElementById("out0").style.display = "none";
+            document.getElementById("out2").style.display = "none";
+        }
+
+        function out0() {
+            document.getElementById("songs").style.display = "none";
+            document.getElementById("searchdis").style.display = "none";
+            document.getElementById("playlistdis").style.display = "none";
+            document.getElementById("settingdis").style.display = "none";
+            document.getElementById("videodis").style.display = "none";
+            document.getElementById("pract").style.display = "none";
+            document.getElementById("out1").style.display = "none";
+            document.getElementById("pract1").style.display = "none";
+            document.getElementById("api").style.display = "block";
+            document.getElementById("out0").style.display = "block";
+            document.getElementById("out2").style.display = "none";
+        }
+
+        function out2() {
+            document.getElementById("songs").style.display = "none";
+            document.getElementById("searchdis").style.display = "none";
+            document.getElementById("playlistdis").style.display = "none";
+            document.getElementById("settingdis").style.display = "none";
+            document.getElementById("videodis").style.display = "none";
+            document.getElementById("pract").style.display = "none";
+            document.getElementById("out1").style.display = "none";
+            document.getElementById("pract1").style.display = "none";
+            document.getElementById("api").style.display = "block";
+            document.getElementById("out0").style.display = "none";
+            document.getElementById("out2").style.display = "block";
         }
 
         function home() {
@@ -569,6 +796,9 @@ function btnn() {
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
             document.getElementById("pract1").style.display = "none";
+            document.getElementById("api").style.display = "block";
+            document.getElementById("out0").style.display = "none";
+            document.getElementById("out2").style.display = "none";
         }
         function searchpage() {
             document.getElementById("searchdis").style.display = "block";
@@ -579,6 +809,9 @@ function btnn() {
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
             document.getElementById("pract1").style.display = "none";
+            document.getElementById("api").style.display = "block";
+            document.getElementById("out0").style.display = "none";
+            document.getElementById("out2").style.display = "none";
         }
         function playlist() {
             document.getElementById("playlistdis").style.display = "block";
@@ -589,6 +822,9 @@ function btnn() {
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
             document.getElementById("pract1").style.display = "none";
+            document.getElementById("api").style.display = "block";
+            document.getElementById("out0").style.display = "none";
+            document.getElementById("out2").style.display = "none";
         }
         function setting() {
             document.getElementById("settingdis").style.display = "block";
@@ -599,6 +835,9 @@ function btnn() {
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
             document.getElementById("pract1").style.display = "none";
+            document.getElementById("api").style.display = "block";
+            document.getElementById("out0").style.display = "none";
+            document.getElementById("out2").style.display = "none";
         }
         function videopage() {
             document.getElementById("settingdis").style.display = "none";
@@ -609,6 +848,9 @@ function btnn() {
             document.getElementById("pract").style.display = "none";
             document.getElementById("out1").style.display = "none";
             document.getElementById("pract1").style.display = "none";
+            document.getElementById("api").style.display = "block";
+            document.getElementById("out0").style.display = "none";
+            document.getElementById("out2").style.display = "none";
         }
 
 //itunesについて
@@ -633,6 +875,9 @@ function enter(){
         document.getElementById("pract").style.display = "none";
         document.getElementById("out1").style.display = "none";
         document.getElementById("pract1").style.display = "none";
+        document.getElementById("api").style.display = "block";
+        document.getElementById("out0").style.display = "none";
+        document.getElementById("out2").style.display = "none";
 
 	    $('#res').html('');
         $('#buttons').html('');
@@ -647,7 +892,7 @@ function enter(){
 			    part: 'snippet, id',
 			    q: q0,
 			    type:'video',
-			    key: 'AIzaSyBYAWN3RgnJu-3zUcGhLYY5-ApehhWZBac'},
+			    key: 'AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA'},
 			    function(data){
 				    var nextPageToken = data.nextPageToken;
 				    var prevPageToken = data.prevPageToken;
@@ -665,7 +910,7 @@ function enter(){
                 part: 'snippet, id',
 			    q: q,
 			    type:'video',
-			    key: 'AIzaSyBYAWN3RgnJu-3zUcGhLYY5-ApehhWZBac'},
+			    key: 'AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA'},
 			    function(data){
 				    var nextPageToken = data.nextPageToken;
 				    var prevPageToken = data.prevPageToken;
@@ -705,12 +950,6 @@ var search = function getInfo (options) {
         success: function(json) {
             showData(json);
         },
-        
-        error: function() {
-            $(function(){
-                $("#error").text("エラーが発生しました");
-            });
-        },
     });
 };
         
@@ -742,6 +981,9 @@ function replay_click(clicked_id) {
     document.getElementById("pract").style.display = "block";
     document.getElementById("out1").style.display = "none";
     document.getElementById("pract1").style.display = "none";
+    document.getElementById("api").style.display = "block";
+    document.getElementById("out0").style.display = "none";
+    document.getElementById("out2").style.display = "none";
     htm = 'https://itunes.apple.com/lookup?id=' + clicked_id; // + '&country=JP'
 
     var pa = {
@@ -760,12 +1002,6 @@ function replay_click(clicked_id) {
         success: function(json) {
             shows(json);
         },
-            
-        error: function() {
-            $(function(){
-                $("#error").text("エラーが発生しました");
-            });
-        },
     });
 }
 
@@ -778,12 +1014,12 @@ function shows(json) {
             var pract0 = document.getElementById("pract0");
             pract0.style.background = "linear-gradient(rgb(8, 146, 238),  rgb(35, 35, 35))";             
                 
-            http += '<img src="' + re.artworkUrl100 + '" style="width: 22%;height: 15%;">';
+            http += '<img src="' + re.artworkUrl100 + '" style="width: 300px;height: 300px;">';
             http += '<div class="xxx" style="margin-left: 27%;margin-top: -23%;"><h1 style="color: white;">' + re.trackName + '</h1><br>';
             http += '<h1 style="color: white;">' + re.artistName + '</h1><br>';
             http += '<a style="color: white;font-size: 25px;" href="' + re.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + re.trackName + "　ダウンロード" + '</a><br></div><br><br>'
-            http += '<div style="text-align: center;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>'
-            http += '<div class="repeat-btns"><span><button class="play-pause" id="' + re.trackId + '"><i title="再生" style="cursor: pointer;" class="fa fa-play"></i></button></span></div><div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" onclick="li(this.id)" id="' + re.trackId + '" class="btn111">歌詞を取得</button></div><br><br><br></div>';
+            http += '<div style="text-align: center;margin-top: 30px;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>'
+            http += '<div class="repeat-btns"><span><button class="play-pause" id="' + re.trackId + '" onclick="ok(this.id)"><i title="再生" style="cursor: pointer;" class="fa fa-play"></i></button></span></div><div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" onclick="li(this.id)" id="' + re.trackId + '" class="btn111">歌詞を取得</button></div><br><br><br></div>';
         }
         http += '</div>';
     }
@@ -808,12 +1044,6 @@ function li(clicked_id) {
         success: function(json) {
           showeded(json);
         },
-
-        error: function() {
-            $(function(){
-              $("#error").text("エラーが発生しました");
-            });
-        },
     });
 }
 
@@ -824,9 +1054,15 @@ function showeded(json) {
             var artist = r00.artistName;
             var track = r00.trackName;
             $.get("https://api.lyrics.ovh/v1/" + artist + "/" + track,
-                function (data) {
-                    document.getElementById("lyrics").innerHTML = data.lyrics.replace(new RegExp("\n", "g"), "<br>")
-                }
+                function(data) {
+                    var neww = data.lyrics.replace(new RegExp("\n", "g"), "<br>");
+                    document.getElementById("lyrics").innerHTML = neww;
+                    //if(neww != null) {
+                    //    document.getElementById("lyrics").innerHTML = neww;
+                    //}else {
+                    //    document.getElementById("lyrics").innerHTML = "歌詞を取得できませんでした";
+                    //}
+                },
             )
         }
     }
@@ -849,12 +1085,6 @@ function ok(clicked_id) {
         
         success: function(json) {
             showed(json);
-        },
-    
-        error: function() {
-            $(function(){
-                $("#error").text("エラーが発生しました");
-            });
         },
     });
 }
@@ -906,14 +1136,16 @@ function showed(json) {
 function getOutput(item) {
     var title = item.snippet.title;
     var description = item.snippet.description;
-    var thumb = item.snippet.thumbnails.high.url;
+    //var thumb = item.snippet.thumbnails.high.url;
+    var img = item.snippet.thumbnails.medium.url
     var channelTitle = item.snippet.channelTitle;
     var videoDate = item.snippet.publishedAt;
     var videoId = item.id.videoId; //id.videoId
     console.log(videoDate)
     var output = '<div id="div0">' + 
     '<div class="list-left" style="margin-right: 10%;">' + 
-    '<iframe id="pre" src="https://www.youtube.com/embed/' + videoId + '" style="width: 350px;height: 180px;"></iframe>' +
+    //'<iframe id="pre" src="https://www.youtube.com/embed/' + videoId + '" style="width: 350px;height: 180px;"></iframe>' +
+    '<img src="' + img + '" id="pre" style="width: 350px;height: 180px;">' + 
     '</div>' +
     '<div class="list-right">' +
     '<h3 style="color: white;">'+title+'</a></h3>' +
@@ -934,11 +1166,15 @@ function youtube_click(clicked_id) {
     document.getElementById("pract").style.display = "none";
     document.getElementById("out1").style.display = "none";
     document.getElementById("pract1").style.display = "block";
+    document.getElementById("api").style.display = "block";
+    document.getElementById("out0").style.display = "none";
+    document.getElementById("out2").style.display = "none";
+    var api = document.getElementById("api");
     var pract2 = document.getElementById("pract2");
     pract2.style.background = "linear-gradient(rgb(8, 146, 238), rgb(35, 35, 35))";  
 
     $.get(
-		"https://www.googleapis.com/youtube/v3/videos?id=" +clicked_id + "&key=AIzaSyBYAWN3RgnJu-3zUcGhLYY5-ApehhWZBac&part=snippet,contentDetails,statistics,status",{
+		"https://www.googleapis.com/youtube/v3/videos?id=" +clicked_id + "&key=AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA&part=snippet,contentDetails,statistics,status",{
 			part: 'snippet, id'},
 			function(data){
 				var nextPageToken = data.nextPageToken;
@@ -951,16 +1187,41 @@ function youtube_click(clicked_id) {
                     var channelTitle = item.snippet.channelTitle;
                     var videoDate = item.snippet.publishedAt;
                     var videoId = item.snippet.videoId;
-                    var underput = '<iframe src="https://www.youtube.com/embed/' + clicked_id + '" style="width: 750px;height: 350px;margin-left: 250px;margin-top: 10px;"></iframe>' +
-                                   '<div class="xxx"><h2 style="color: white;margin-top: 45px;text-align: center;">' + title + '</h2>' + 
-                                   '<div style="text-align: center;margin-top: 45px;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>' + 
-                                   '<div class="repeat-btns"><span><i class="fa fa-" title="再生" style="cursor: pointer;"></i>' + 
-                                   '</span><span><button id="' + clicked_id + '"><i class="fa fa-play" title="再生" style="cursor: pointer;"></i>' + 
-                                   '</button></span></div>' + 
-                                   '<div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" id="' + clicked_id + '" class="btn111">歌詞を取得</button></div></div><br><br><br></div>';
+                    var underput = '<iframe src="https://www.youtube.com/embed/' + clicked_id + '" style="width: 70%;height: 400px;margin-left: 15%;margin-top: 10px;"></iframe>' +
+                    '<div class="xxx"><h2 style="color: white;margin-top: 45px;text-align: center;">' + title + '</h2>' + 
+                    '<div style="text-align: center;margin-top: 45px;">' + 
+                    '<div style="margin-top: 4%;background: rgb(8, 146, 238);width: 80%;height: 300px;border-radius: 10px;color: white;margin-left: 10%;padding-top: 15px;overflow-y: scroll;" id="lyrics1"><h3 style="margin-left: 16px;">歌詞</h3><button style="background: white;width: 200px;height: 50px;border-radius: 10px;color: rgb(8, 146, 238);margin-top: 10px;cursor: pointer;border: none;outline: none;margin-left: 13px;" id="' + clicked_id + '" onclick="ly1(this.id)" class="btn111">歌詞を取得</button></div></div><br><br><br></div>';
                     pract2.innerHTML = underput;
+                    var api1 = '<iframe src="https://www.youtube.com/embed/' + clicked_id + '" style="width: 97%;height: 100%;"></iframe>';
+                    api.innerHTML = api1;
 				});
 			}
+	);
+}
+
+function ly1(clicked_id) {
+    $.get(
+		"https://www.googleapis.com/youtube/v3/videos?id=" +clicked_id + "&key=AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA&part=snippet,contentDetails,statistics,status",{
+        part: 'snippet, id'},
+	    function(data){
+			var nextPageToken = data.nextPageToken;
+			var prevPageToken = data.prevPageToken;
+			console.log(data);				
+			$.each(data.items, function(i, item){
+            var track = item.snippet.title;
+            var description = item.snippet.description;
+            var img = item.snippet.thumbnails.medium.url
+            var artist = item.snippet.channelTitle;
+            var videoDate = item.snippet.publishedAt;
+            var videoId = item.id.videoId; //id.videoId
+            $.get("https://api.lyrics.ovh/v1/" + artist + "/" + track,
+                function(data) {
+                    var neww = data.lyrics.replace(new RegExp("\n", "g"), "<br>");
+                    document.getElementById("lyrics1").innerHTML = neww;
+                },
+            )
+            });
+		}
 	);
 }
 
@@ -973,7 +1234,7 @@ function prec() {
 			part: 'snippet, id',
 			q: q,
             type:'video',
-            key: 'AIzaSyBYAWN3RgnJu-3zUcGhLYY5-ApehhWZBac'},
+            key: 'AIzaSyAL8wAEuUFnmmsBzVuJ_XPQ9JDF5cvRVUA'},
 			function(data){
 				var nextPageToken = data.nextPageToken;
 				var prevPageToken = data.prevPageToken;
