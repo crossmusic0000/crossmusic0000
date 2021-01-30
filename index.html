@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="crossmusic icon.png">
-    <script src="https://kit.fontawesome.com/dac92b92d5.js" crossorigin="anonymous"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="shortcut icon" href="crossmusic icon.png">
+<script src="https://kit.fontawesome.com/dac92b92d5.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Crossmusic</title>
     <style>
@@ -83,7 +78,7 @@
             display: none;
         }
         #search {
-            margin-top: -15%;
+            margin-top: 0%;
             width: 100%;
             height: 13%;
             background: rgb(8, 146, 238);
@@ -323,7 +318,7 @@
             transition: .5s;
             box-shadow: inset 0 0 5px rgba(0,0,0,.2);
         }input:checked[type="checkbox"] {
-            background: rgb(8, 146, 238);
+            background: #e4e3e3;
         }input[type="checkbox"]:before {
             content: '';
             position: absolute;
@@ -337,7 +332,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,.2);
             transition: .5s;
         }input:checked[type="checkbox"]:before {
-            left: 30px;
+            left: 0;
         }
 
         @media screen and (max-width: 1000px) {
@@ -385,7 +380,7 @@
                 padding-left: 10px;
                 padding-top: 3px;
                 margin-left: 15%;
-                margin-top: 1%;
+                margin-top: -9%;
                 float: left;
             }
             #img {
@@ -403,7 +398,7 @@
 <body onload="prec()">
     <div id="left">
         <img src="crossmusic icon.png" id="img">
-        <input type="search" id="searchbtn1" autofocus autocorrect="off" autocapitalize="off" spellcheck="true" placeholder="&#xF002; 曲名、アーティスト名、アルバム名を検索">
+        <input style="position: absolute;" type="search" id="searchbtn1" autofocus autocorrect="off" autocapitalize="off" spellcheck="true" placeholder="&#xF002; 曲名、アーティスト名、アルバム名を検索">
         <div id="home" onclick="home()">
             <h3 style="color: white;margin-left: 5%;"><i class="fas fa-home" style="margin-right: 10%;"></i>ホーム</h3>
         </div>
@@ -519,6 +514,11 @@
                     <br>
                     <input type="checkbox" style="cursor: not-allowed;float: left;margin-top: 60px;margin-left: -462px;" title="変更できません。">
                     <h3 style="color: white;float: left;margin-top: 65px;margin-left: -300px;">ランキング表示を、可能にする。</h3>
+                    <br>
+                    <input type="checkbox" style="cursor: not-allowed;float: left;margin-top: 120px;margin-left: -462px;" title="変更できません。">
+                    <h3 style="color: white;float: left;margin-top: 125px;margin-left: -300px;">再生履歴表示を、可能にする。</h3>
+                    <br>
+                    <input class="input10" onclick="btnn()" type="button" style="cursor: pointer;float: left;margin-top: 180px;margin-left: 5px;position:relative;margin-bottom: 50px;" title="ヘルプへ" value="ヘルプへ">
                 </div>
             </div>
             <div id="pract">
@@ -547,61 +547,61 @@
             <br>
             <br>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/c5/26/c0/c526c01d-0c03-7a3e-1e1f-bbf2b1307315/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/c5/26/c0/c526c01d-0c03-7a3e-1e1f-bbf2b1307315/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">猫  -DISH//</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1265059712" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is2-ssl.mzstatic.com/image/thumb/Music114/v4/1c/6f/64/1c6f6453-46fb-10d3-d2dd-67a1c1f25d4b/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is2-ssl.mzstatic.com/image/thumb/Music114/v4/1c/6f/64/1c6f6453-46fb-10d3-d2dd-67a1c1f25d4b/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">炎  -LiSA</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1531847485" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music113/v4/61/c1/68/61c16879-92a1-79a5-dd88-4b31c65d3f25/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music113/v4/61/c1/68/61c16879-92a1-79a5-dd88-4b31c65d3f25/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">夜に駆ける  -YOASOBI</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1490256995" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b5/56/a8/b556a854-a0ca-1803-2e88-3acb622828ae/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b5/56/a8/b556a854-a0ca-1803-2e88-3acb622828ae/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Dynamite  -BTS</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1528831888" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/8f/75/91/8f7591c6-7522-8f75-1200-78e5ef6712d5/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/8f/75/91/8f7591c6-7522-8f75-1200-78e5ef6712d5/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">紅蓮華  -Lisa</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1459242780" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/07/32/cf/0732cfa8-10a2-f4a4-164f-7ec084ac64b1/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/07/32/cf/0732cfa8-10a2-f4a4-164f-7ec084ac64b1/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">感電  -米津玄師</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1521414181" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/cf/e5/71/cfe571a0-8b9f-6b0f-654f-951f46b72ff5/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/cf/e5/71/cfe571a0-8b9f-6b0f-654f-951f46b72ff5/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">香水  -瑛人</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1524596325" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/96/53/3b/96533b35-ec84-3445-cfb7-bcd914985eb9/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/96/53/3b/96533b35-ec84-3445-cfb7-bcd914985eb9/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">I LOVE...  -Official髭男dism</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1492963535" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music113/v4/f7/50/66/f7506627-5125-d607-d0cc-176e65ea7bb8/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music113/v4/f7/50/66/f7506627-5125-d607-d0cc-176e65ea7bb8/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">裸の心  -あいみょん</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1508133095" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is2-ssl.mzstatic.com/image/thumb/Music113/v4/ac/47/23/ac4723ed-326c-a915-cbc0-ce5ee04a84d3/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is2-ssl.mzstatic.com/image/thumb/Music113/v4/ac/47/23/ac4723ed-326c-a915-cbc0-ce5ee04a84d3/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Make you happy  -NiziU</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1519410583" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
@@ -621,63 +621,63 @@
             <br>
             <br>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ef/ca/a4/efcaa44a-517a-98e3-2353-5bff15471ed5/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ef/ca/a4/efcaa44a-517a-98e3-2353-5bff15471ed5/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Shape of You  -Ed Sheeran</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1193701392" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/7b/da/96/7bda9634-c799-27c0-b549-56fb04d62768/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/7b/da/96/7bda9634-c799-27c0-b549-56fb04d62768/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Sugar  -Maroon5</h3>
-                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1422652341" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1440827601" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music5/v4/f5/46/b6/f546b615-b3ff-1910-ef37-e09d1afdf4b7/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music5/v4/f5/46/b6/f546b615-b3ff-1910-ef37-e09d1afdf4b7/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">See You Again  -Wiz Khalifa (feat. Charlie Puth)</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="966411602" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/9c/91/83/9c918303-e0a4-2d4b-97d6-f986b9fba604/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music128/v4/9c/91/83/9c918303-e0a4-2d4b-97d6-f986b9fba604/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Shake It Off  -Taylor Swift</h3>
-                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1440936016" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1440819310" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music4/v4/5d/1f/56/5d1f56ae-fa9d-8ae4-724e-172504571be4/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music4/v4/5d/1f/56/5d1f56ae-fa9d-8ae4-724e-172504571be4/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Thinking Out Loud  -Ed Sheeran</h3>
-                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="858518134" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="858517200" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/33/5f/6c/335f6cb3-a9f4-fdc4-f8dd-eabd15bb29a3/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/33/5f/6c/335f6cb3-a9f4-fdc4-f8dd-eabd15bb29a3/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">What Makes You Beautiful  -One Direction</h3>
-                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="481400053" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="542625586" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/06/90/cb/0690cb04-0fc7-d372-74ff-7800a4c1f40f/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music113/v4/06/90/cb/0690cb04-0fc7-d372-74ff-7800a4c1f40f/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">There's Nothing Holdin' Me Back  -Shawn Mendes</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1440892573" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/9a/c3/67/9ac367c0-5c09-01c7-2f50-5705a5fb88c6/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/9a/c3/67/9ac367c0-5c09-01c7-2f50-5705a5fb88c6/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Sorry  -Justin Bieber</h3>
-                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1440826320" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1440849067" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/ff/4a/eb/ff4aeb7c-7f2d-1d18-d7cc-51c107c70bad/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music114/v4/ff/4a/eb/ff4aeb7c-7f2d-1d18-d7cc-51c107c70bad/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Bud Guy  -Billie Eilish</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1450695739" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/cd/1f/84/cd1f8413-008a-6759-dccd-676ad72a017a/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/cd/1f/84/cd1f8413-008a-6759-dccd-676ad72a017a/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Just the Way You Are  -Bruno Mars</h3>
-                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="576655095" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
+                <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="578054244" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             </div>
@@ -695,61 +695,61 @@
             <br>
             <br>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/01/9f/a5/019fa56a-e36e-948d-bdae-3e4d5837d98f/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/01/9f/a5/019fa56a-e36e-948d-bdae-3e4d5837d98f/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">奏  -スキマスイッチ</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1445037960" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is2-ssl.mzstatic.com/image/thumb/Music/v4/1d/91/0b/1d910b82-5f46-8727-2e12-d9795d5a3487/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is2-ssl.mzstatic.com/image/thumb/Music/v4/1d/91/0b/1d910b82-5f46-8727-2e12-d9795d5a3487/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">三日月  -絢香</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="193412328" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/d7/b4/32/d7b4323f-aa57-1f89-5e9e-38c039f6d841/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/d7/b4/32/d7b4323f-aa57-1f89-5e9e-38c039f6d841/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">ぼくのこと  -Mrs. GREEN APPLE</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1475233541" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/13/84/9e1384d5-d48a-988f-98d3-e012b77287ff/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/13/84/9e1384d5-d48a-988f-98d3-e012b77287ff/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Story  -AI</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1484028492" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/b3/84/42/b3844253-b1e1-d184-8c30-d5f0cb66d984/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/b3/84/42/b3844253-b1e1-d184-8c30-d5f0cb66d984/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">コブクロ  -蕾</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="291873807" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/ea/50/ad/ea50adc2-588d-e5b6-110d-88799a955b8b/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music118/v4/ea/50/ad/ea50adc2-588d-e5b6-110d-88799a955b8b/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">シンクロニシティ  -乃木坂46</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1368265248" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/95/97/d6/9597d6bc-e541-4d0e-89b2-eb47c991be3a/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/95/97/d6/9597d6bc-e541-4d0e-89b2-eb47c991be3a/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Pop Virus  -星野源</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1444990823" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music/v4/a4/35/0b/a4350b55-cd13-a09c-8bf3-4d2e73b63ab4/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is4-ssl.mzstatic.com/image/thumb/Music/v4/a4/35/0b/a4350b55-cd13-a09c-8bf3-4d2e73b63ab4/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">優しさで溢れるように  -JUJU</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="573775615" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is3-ssl.mzstatic.com/image/thumb/Music123/v4/d6/7e/e4/d67ee4d7-6afc-d828-332a-9a81076cb6e0/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is3-ssl.mzstatic.com/image/thumb/Music123/v4/d6/7e/e4/d67ee4d7-6afc-d828-332a-9a81076cb6e0/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">Pretender  -Official髭男dism</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1459216694" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
             </div>
             <div style="margin-left: 40px;float: left;height: 92px;margin-top: 40px;padding: 5px;" id="token">
-                <img src="https://is3-ssl.mzstatic.com/image/thumb/Music123/v4/cb/34/0d/cb340d17-8fd1-1dfa-189f-b357388b0683/source/100x100bb.jpg" style="float: left;width: 90px;height: 90px;">
+                <img src="https://is3-ssl.mzstatic.com/image/thumb/Music123/v4/cb/34/0d/cb340d17-8fd1-1dfa-189f-b357388b0683/source/90x90bb.jpg" style="float: left;width: 90px;height: 90px;">
                 <h3 style="color: white;float: left;margin-left: 50px;margin-top: 33px;">まちがいさがし  -菅田将暉</h3>
                 <button style="width: 60px;height: 60px;cursor: pointer;float: left;margin-left: 50px;margin-top: 17px;outline: none;background-color: rgb(8, 146, 238);border-radius: 50px;border: none;" id="1461077113" onclick="push(this.id)"><i title="再生" class="fa fa-play" style="color: white;font-size: 17px;"></i></button>
                 <i title="ダウンロード" style="color: white;float: left;cursor: pointer;margin-left: 30px;margin-top: 33px;font-size: 25px;" class="fas fa-download"></i>
@@ -758,12 +758,96 @@
         </div>
     </div>
     <div id="right"></div>
-    <div id="api" style="width: 18%;height: 20%;background: rgb(26, 26, 26);position: absolute;top: 580px;z-index: 10;"><i style="color:  rgb(91, 91, 91);font-size: 120px;margin-left: 80px;margin-top: 20px;" class="fas fa-compact-disc"></i></div>
+    <div id="api" class="drag-and-drop" style="width: 18%;height: 20%;background: rgb(26, 26, 26);position: absolute;top: 580px;z-index: 10;cursor: move;"><i style="color:  rgb(91, 91, 91);font-size: 120px;margin-left: 80px;margin-top: 20px;" class="fas fa-compact-disc"></i></div>
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
+
+// ここから！
+(function(){
+
+//要素の取得
+var elements = document.getElementsByClassName("drag-and-drop");
+
+//要素内のクリックされた位置を取得するグローバル（のような）変数
+var x;
+var y;
+
+//マウスが要素内で押されたとき、又はタッチされたとき発火
+for(var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("mousedown", mdown, false);
+    elements[i].addEventListener("touchstart", mdown, false);
+}
+
+//マウスが押された際の関数
+function mdown(e) {
+
+    //クラス名に .drag を追加
+    this.classList.add("drag");
+
+    //タッチデイベントとマウスのイベントの差異を吸収
+    if(e.type === "mousedown") {
+        var event = e;
+    } else {
+        var event = e.changedTouches[0];
+    }
+
+    //要素内の相対座標を取得
+    x = event.pageX - this.offsetLeft;
+    y = event.pageY - this.offsetTop;
+
+    //ムーブイベントにコールバック
+    document.body.addEventListener("mousemove", mmove, false);
+    document.body.addEventListener("touchmove", mmove, false);
+}
+
+//マウスカーソルが動いたときに発火
+function mmove(e) {
+
+    //ドラッグしている要素を取得
+    var drag = document.getElementsByClassName("drag")[0];
+
+    //同様にマウスとタッチの差異を吸収
+    if(e.type === "mousemove") {
+        var event = e;
+    } else {
+        var event = e.changedTouches[0];
+    }
+
+    //フリックしたときに画面を動かさないようにデフォルト動作を抑制
+    e.preventDefault();
+
+    //マウスが動いた場所に要素を動かす
+    drag.style.top = event.pageY - y + "px";
+    drag.style.left = event.pageX - x + "px";
+
+    //マウスボタンが離されたとき、またはカーソルが外れたとき発火
+    drag.addEventListener("mouseup", mup, false);
+    document.body.addEventListener("mouseleave", mup, false);
+    drag.addEventListener("touchend", mup, false);
+    document.body.addEventListener("touchleave", mup, false);
+
+}
+
+//マウスボタンが上がったら発火
+function mup(e) {
+    var drag = document.getElementsByClassName("drag")[0];
+
+    //ムーブベントハンドラの消去
+    document.body.removeEventListener("mousemove", mmove, false);
+    drag.removeEventListener("mouseup", mup, false);
+    document.body.removeEventListener("touchmove", mmove, false);
+    drag.removeEventListener("touchend", mup, false);
+
+    //クラス名 .drag も消す
+    drag.classList.remove("drag");
+}
+
+})()
+
+//ここまで！
 
 console.log("%c個人情報は、決して盗まないでください。", 'color: red; background: white; font-size: 30px;');
 
@@ -1054,8 +1138,18 @@ function shows(json) {
             var pract0 = document.getElementById("pract0");
             pract0.style.background = "linear-gradient(rgb(8, 146, 238),  rgb(35, 35, 35))";    
             console.log(re.trackId);
+            window.onload = function() {
+                window.defaultStatus = "今、" + re.trackName + "が、流れています。"
+            }
+            var sourceStr = re.artworkUrl100 ;
+
+var targetStr = "100x100bb.jpg" ;
+
+var regExp = new RegExp( targetStr, "g" ) ;
+
+var a = sourceStr.replace( regExp , "350x350bb.jpg" );
                 
-            http += '<img src="' + re.artworkUrl100 + '" style="width: 300px;height: 300px;">';
+            http += '<img src="' + a + '" style="width: 300px;height: 300px;">';
             http += '<div class="xxx" style="margin-left: 27%;margin-top: -23%;"><h1 style="color: white;">' + re.trackName + '</h1><br>';
             http += '<h1 style="color: white;">' + re.artistName + '</h1><br>';
             http += '<a style="color: white;font-size: 25px;" href="' + re.trackViewUrl + '&amp;at=アフィリエイト・トークン" rel="nofollow" target="_blank">' + re.trackName + "　ダウンロード" + '</a><br></div><br><br>'
