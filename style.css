@@ -461,7 +461,7 @@
                 }
             }
             #bbb {
-                background-image: linear-gradient(rgba(8, 146, 238, 0.8), rgba(0, 0, 0, 0.8)), url("images/out1back.jpg");
+                background-image: linear-gradient(rgba(8, 146, 238, 0.8), rgba(0, 0, 0, 0.8)), url("out1back.jpg");
                 width: 95%;
                 height: 450px;
                 border-radius: 10px;
